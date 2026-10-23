@@ -1,20 +1,20 @@
-# Pi-Bolt's release archives, as the installer (https://pi-bolt.opensec.in/install.sh) unpacks them: the folder holds the
-# executable `pi` and the files it reads beside it (docs, themes, native modules), so it is installed whole into libexec and
-# `pi-bolt` links to `pi` there. Pi-Bolt's release workflow rewrites the version, URLs and checksums for each release.
+# Pi-Bolt's release archives, as the installer (https://pi-bolt.opensec.in/install.sh) unpacks them:
+# the folder holds the executable `pi` and the files it reads beside it (docs, themes, native modules),
+# so it is installed whole into libexec and `pi-bolt` links to `pi` there. Pi-Bolt's release workflow
+# rewrites the version, URLs and checksums for each release.
 class PiBolt < Formula
   desc "Pi coding agent, compiled ahead of time to native code"
   homepage "https://pi-bolt.opensec.in"
+  # macOS: Apple silicon's build. (Not in an on_arm block: an Intel Mac would then find no URL,
+  # and fail with a less clear error than the requirement below.)
+  url "https://github.com/opensec-git/Pi-Bolt/releases/download/bolt-v1.0.0/pi-bolt-darwin-arm64.tar.gz"
   version "1.0.0"
+  sha256 "d5aa5bcc4eb5f1d79f8ce63f3c24b837f34d19cd394a637f1abe781db422f3d7"
   license "MIT"
 
   on_macos do
-    # Apple silicon only: there is no build for Intel Macs.
+    # There is no build for Intel Macs.
     depends_on arch: :arm64
-
-    on_arm do
-      url "https://github.com/opensec-git/Pi-Bolt/releases/download/bolt-v1.0.0/pi-bolt-darwin-arm64.tar.gz"
-      sha256 "d5aa5bcc4eb5f1d79f8ce63f3c24b837f34d19cd394a637f1abe781db422f3d7"
-    end
   end
 
   on_linux do
