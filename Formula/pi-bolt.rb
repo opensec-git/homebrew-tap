@@ -7,9 +7,9 @@ class PiBolt < Formula
   homepage "https://pi-bolt.opensec.in"
   # macOS: Apple silicon's build. (Not in an on_arm block: an Intel Mac would then find no URL,
   # and fail with a less clear error than the requirement below.)
-  url "https://github.com/opensec-git/Pi-Bolt/releases/download/bolt-v1.3.0/pi-bolt-darwin-arm64.tar.gz"
-  version "1.3.0"
-  sha256 "ef88e826b298ef7d5343abd684708f6f3572fdce2315d36e0b2320d9e83e6b66"
+  url "https://github.com/opensec-git/Pi-Bolt/releases/download/bolt-v1.3.1/pi-bolt-darwin-arm64.tar.gz"
+  version "1.3.1"
+  sha256 "d9d111c4c1a48479e72b2519fd41d3970540c8d276a3e06decb3b7fbd84655ee"
   license "MIT"
 
   on_macos do
@@ -20,12 +20,12 @@ class PiBolt < Formula
   on_linux do
     on_intel do
       # The default x86-64 build, for CPUs with AVX2.
-      url "https://github.com/opensec-git/Pi-Bolt/releases/download/bolt-v1.3.0/pi-bolt-linux-x64.tar.gz"
-      sha256 "a24ce66389532690adee339434ca7debd83466bd09e3beb92a8a5e9bfbf47a93"
+      url "https://github.com/opensec-git/Pi-Bolt/releases/download/bolt-v1.3.1/pi-bolt-linux-x64.tar.gz"
+      sha256 "21621ef011748fcd438c6a8c68f6eceee21fb10588be3d21522df52d8810ccdd"
     end
     on_arm do
-      url "https://github.com/opensec-git/Pi-Bolt/releases/download/bolt-v1.3.0/pi-bolt-linux-arm64.tar.gz"
-      sha256 "22e990587382b5eda6c774c5a7ae02d9e1c53a8c437863327e719d4adc67a6b2"
+      url "https://github.com/opensec-git/Pi-Bolt/releases/download/bolt-v1.3.1/pi-bolt-linux-arm64.tar.gz"
+      sha256 "6d88b6f2bb4bcefcd8245a7330a1f693ed2a0158224a9a680c667b988bd0ea19"
     end
   end
 
